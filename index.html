@@ -1,0 +1,124 @@
+<head>
+    <style>
+        body {
+            text-align: center;
+
+        }
+
+        h1 {
+            font-size: 80px;
+        }
+
+        h2 {
+
+            font-family:"Courier New";
+            font-size: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="messagePlace"> Rock Paper Scissors</h1>
+    <div>
+        <img id="userChoice" src="download.jpg">
+    </div>
+    <br>
+    <h2><div id="scoreTracker"> Click below to select a choice</div></h2>
+    <div id="computersChoice" class="computerChoiceDisplay"> </div>
+    <button onclick="computerChoiceRock();"> <img src="rock.jpg"> </button>
+    <button onclick="computerChoiceScissors();"><img src="scissors.jpg"></button>
+    <button onclick="computerChoicePaper();"><img src="paper.jpg"></button>
+    <script>
+        var number = 1;
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function computerChoiceRock() {
+            number = Math.floor((Math.random() * 100) + 1);
+    
+            if (number < 33) {
+                document.getElementById("userChoice").src = "rock.jpg"
+                document.getElementById("messagePlace").innerHTML = "Its a tie!"
+                document.getElementById("messagePlace").style.color = "darkSlateGray"
+            }
+            else if (number > 33 && number < 66) {
+                document.getElementById("userChoice").src = "scissors.jpg"
+                document.getElementById("messagePlace").innerHTML = "You Won!"
+                document.getElementById("messagePlace").style.color = "lime"
+            
+                 playerScore= playerScore+1
+            }
+            else {
+                document.getElementById("userChoice").src = "paper.jpg";
+                document.getElementById("messagePlace").innerHTML = "You Lost:("
+                document.getElementById("messagePlace").style.color = "crimson"
+                 computerScore= computerScore+1
+                
+            }
+            document.getElementById("scoreTracker").innerHTML= "Computer:"+ computerScore+ "  Player:"+ playerScore;
+            
+        }
+        function computerChoicePaper() {
+            number = Math.floor((Math.random() * 100) + 1);
+            if (number < 33) {
+                document.getElementById("userChoice").src = "rock.jpg"
+                document.getElementById("messagePlace").innerHTML = "You Won!"
+                document.getElementById("messagePlace").style.color = "lime"
+                 playerScore= playerScore+1
+            }
+            else if (number > 33 && number < 66) {
+                document.getElementById("userChoice").src = "scissors.jpg"
+                document.getElementById("messagePlace").innerHTML = "You Lost:("
+                document.getElementById("messagePlace").style.color = "crimson"
+                 computerScore= computerScore+1
+            }
+            else {
+                document.getElementById("userChoice").src = "paper.jpg"
+                document.getElementById("messagePlace").innerHTML = "Its a tie!"
+                document.getElementById("messagePlace").style.color = "DarkSlateGray"
+            }
+            document.getElementById("scoreTracker").innerHTML= "Computer:"+ computerScore+ "  Player:"+ playerScore;
+        }
+        function computerChoiceScissors() {
+            number = Math.floor((Math.random() * 100) + 1);
+            if (number < 33) {
+                document.getElementById("userChoice").src = "rock.jpg"
+                document.getElementById("messagePlace").innerHTML = "You Lost:("
+                document.getElementById("messagePlace").style.color = "crimson"
+                 computerScore= computerScore+1
+            }
+            else if (number > 33 && number < 66) {
+                document.getElementById("userChoice").src = "scissors.jpg"
+                document.getElementById("messagePlace").innerHTML = "Its a tie"
+                document.getElementById("messagePlace").style.color = "DarkSlateGray"
+            }
+            else {
+                document.getElementById("userChoice").src = "paper.jpg"
+                document.getElementById("messagePlace").innerHTML = "You Won!"
+                document.getElementById("messagePlace").style.color = "lime"
+                 playerScore= playerScore+1
+            }
+            document.getElementById("scoreTracker").innerHTML= "Computer:"+ computerScore+ "  Player:"+ playerScore;
+        }
+
+    </script>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
